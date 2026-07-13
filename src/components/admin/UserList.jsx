@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const UserNavbar = () => {
+export const UserList = () => {
   return (
     <div>
-        <h1>UserNavbar</h1>
+        <h1>UserList</h1>
     </div>
   )
 }

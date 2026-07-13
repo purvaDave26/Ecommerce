@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const UserNavbar = () => {
+export const Signup = () => {
   return (
     <div>
-        <h1>UserNavbar</h1>
+        <h1>Signup</h1>
     </div>
   )
 }
