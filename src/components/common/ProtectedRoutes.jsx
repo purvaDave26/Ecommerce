@@ -1,18 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 
-const ProtectedRoutes=({children})=>
+const ProtectedRoutes=({children,roles})=>
 {
     const [isLogin, setisLogin] = useState(false);
     const [isLoading, setisLoading] = useState(true);
 
+
     useEffect(()=>
     {
         const token=localStorage.getItem("tokan")
+        const role=localStorage.getItem("role")
         if(token)
         {
-            setisLogin(true)
+            if(role && roles.includes(role))
+            {
+                setisLogin(true)
+            }
         }
         else
         {

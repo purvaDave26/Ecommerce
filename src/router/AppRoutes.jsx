@@ -5,6 +5,9 @@ import { Signup } from '../components/common/Signup'
 import { UserNavbar } from '../components/user/UserNavbar'
 import { AdminSidebar } from '../components/admin/AdminSidebar'
 import { UserOrders } from '../components/user/UserOrders'
+import ProtectedRoutes from '../components/common/ProtectedRoutes'
+import { Cart } from '../components/user/Cart'
+import { UserList } from '../components/admin/UserList'
 
   const router=createBrowserRouter([
     {
@@ -21,7 +24,14 @@ import { UserOrders } from '../components/user/UserOrders'
       children:[
         {
           path:"orders",
-          element:<UserOrders/>
+          element:
+          <ProtectedRoutes roles={["user"]}>
+          <UserOrders/>
+          </ProtectedRoutes>
+        },
+        {
+          path:"cart",
+          element:<Cart/>
         }
       ]
     },
@@ -31,7 +41,10 @@ import { UserOrders } from '../components/user/UserOrders'
       children:[
         {
           path:"userlist",
-          element:<userList/>
+          element:
+          <ProtectedRoutes roles={["admin"]}>
+            <UserList/>
+            </ProtectedRoutes>
         }
       ]
     }

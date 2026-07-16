@@ -10,6 +10,7 @@ export const Login = () => {
   const submitHandler=(data)=>
   {
     localStorage.setItem("tokan","qwertghjkmjnbfdsd");
+    localStorage.setItem("role","user")
     naviagate("/user")
   }
   return (
