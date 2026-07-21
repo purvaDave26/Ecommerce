@@ -8,6 +8,7 @@ import { UserOrders } from '../components/user/UserOrders'
 import ProtectedRoutes from '../components/common/ProtectedRoutes'
 import { Cart } from '../components/user/Cart'
 import { UserList } from '../components/admin/UserList'
+import { Shop } from '../components/user/Shop'
 
   const router=createBrowserRouter([
     {
@@ -28,6 +29,10 @@ import { UserList } from '../components/admin/UserList'
           <ProtectedRoutes roles={["user"]}>
           <UserOrders/>
           </ProtectedRoutes>
+        },
+        {
+          path:"shop",
+          element:<Shop/>
         },
         {
           path:"cart",
