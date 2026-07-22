@@ -4,7 +4,8 @@ import { Link, NavLink, Outlet } from 'react-router-dom'
 
 const NAV_LINKS = [
   { name: 'My Orders', path: '/user/orders' },
-  {name:"shop",path:"/user/shop"}
+  {name:"shop",path:"/user/shop"},
+  {name:"Wallet",path:"/user/Wallet"},
   
 ];
 
@@ -14,6 +15,7 @@ export const UserNavbar = () => {
   const state=useSelector(state=>state)
   {
     console.log("cart..",state.cart.cart)
+    console.log("bank..",state.bank.balance)
   }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
@@ -21,7 +23,7 @@ export const UserNavbar = () => {
 
   // Example indicators
   const cartItemCount = 3;
-  const notificationCount = 2;
+  const notificationCount = 1;
 
   // Toggle handlers
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -127,6 +129,10 @@ export const UserNavbar = () => {
                   </span>
                 )}
               </Link>
+
+                <p>
+                {state.bank.balance}
+              </p>
 
               {/* Thin vertical separator */}
               <div className="h-6 w-px bg-slate-200"></div>

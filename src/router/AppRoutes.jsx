@@ -9,6 +9,7 @@ import ProtectedRoutes from '../components/common/ProtectedRoutes'
 import { Cart } from '../components/user/Cart'
 import { UserList } from '../components/admin/UserList'
 import { Shop } from '../components/user/Shop'
+import { Wallet } from '../components/user/Wallet'
 
   const router=createBrowserRouter([
     {
@@ -37,6 +38,10 @@ import { Shop } from '../components/user/Shop'
         {
           path:"cart",
           element:<Cart/>
+        },
+        {
+          path:"wallet",
+          element:<Wallet/>
         }
       ]
     },
