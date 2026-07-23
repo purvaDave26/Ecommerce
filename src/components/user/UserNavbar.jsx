@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, NavLink, Outlet } from 'react-router-dom'
+import { ThemeContext } from './ThemeContext';
 
 const NAV_LINKS = [
   { name: 'My Orders', path: '/user/orders' },
@@ -10,6 +11,14 @@ const NAV_LINKS = [
 ];
 
 export const UserNavbar = () => {
+  const themeHandler=()=>
+  {
+    settheme(theme=="light"?"dark":"light")
+    localStorage.setItem("theme",theme=="light"?"dark":"light")
+  }
+
+  const {theme,settheme} = useContext(ThemeContext)
+   console.log("theme--->",theme)
 
 
   const state=useSelector(state=>state)
@@ -36,6 +45,10 @@ export const UserNavbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/60 shadow-sm transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <button onClick={()=>{themeHandler()}}>{theme=="light"?"dark":"light"}</button>
             
             {/* Logo Section */}
             <div className="flex-shrink-0 flex items-center">

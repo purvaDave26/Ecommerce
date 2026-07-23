@@ -12,7 +12,14 @@ const BankSlice=createSlice({
         },
         withdrawAction:(state,action)=>
         {
+           if(action.payload<state.balance)
+            {
             state.balance-=action.payload
+            } 
+            else
+            {
+                console.log("insufficent balance")
+            }
         }
     }
 })
