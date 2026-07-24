@@ -10,6 +10,7 @@ import { Cart } from '../components/user/Cart'
 import { UserList } from '../components/admin/UserList'
 import { Shop } from '../components/user/Shop'
 import { Wallet } from '../components/user/Wallet'
+import { GetData } from '../components/user/getData'
 
   const router=createBrowserRouter([
     {
@@ -42,6 +43,10 @@ import { Wallet } from '../components/user/Wallet'
         {
           path:"wallet",
           element:<Wallet/>
+        },
+        {
+          path:"data",
+          element:<GetData/>
         }
       ]
     },

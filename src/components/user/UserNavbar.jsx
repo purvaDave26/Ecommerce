@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { name: 'My Orders', path: '/user/orders' },
   {name:"shop",path:"/user/shop"},
   {name:"Wallet",path:"/user/Wallet"},
+  {name:"data",path:"/user/data"}
   
 ];
 
